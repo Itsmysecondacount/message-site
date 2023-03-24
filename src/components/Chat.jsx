@@ -3,7 +3,15 @@ import React from 'react';
 const Chat = () => {
 	return (
 		<div className="chat">
-			<h4>Chat</h4>
+			<div className="chatInfo">
+				<span>Jane</span>
+				<div className="chatIcons">
+					<img src="" alt="" />
+					<img src="" alt="" />
+					<img src="" alt="" />
+					<img src="" alt="" />
+				</div>
+			</div>
 		</div>
 	);
 };
