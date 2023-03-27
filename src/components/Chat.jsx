@@ -1,19 +1,12 @@
-import React from 'react';
+import React from "react";
+import ChatHeader from "./ChatHeader";
 
 const Chat = () => {
-	return (
-		<div className="chat">
-			<div className="chatInfo">
-				<span>Jane</span>
-				<div className="chatIcons">
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div className="chat">
+      <ChatHeader />
+    </div>
+  );
 };
 
 export default Chat;
