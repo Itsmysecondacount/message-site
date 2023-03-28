@@ -52,7 +52,14 @@ function App() {
 							</ProtectedRouteLogin>
 						}
 					/>
-					<Route path="register" element={<Register />} />
+					<Route
+						path="register"
+						element={
+							<ProtectedRouteLogin>
+								<Register />
+							</ProtectedRouteLogin>
+						}
+					/>
 				</Route>
 			</Routes>
 		</BrowserRouter>
