@@ -1,4 +1,8 @@
 import React from 'react';
+import { AiFillVideoCamera, AiOutlineUserAdd } from 'react-icons/ai';
+import { FiMoreHorizontal } from 'react-icons/fi';
+import Input from './Input';
+import Messages from './Messages';
 
 const Chat = () => {
 	return (
@@ -6,12 +10,13 @@ const Chat = () => {
 			<div className="chatInfo">
 				<span>Jane</span>
 				<div className="chatIcons">
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
+					<AiFillVideoCamera className="iconR" />
+					<AiOutlineUserAdd className="iconR" />
+					<FiMoreHorizontal className="iconR" />
 				</div>
 			</div>
+			<Messages />
+			<Input />
 		</div>
 	);
 };

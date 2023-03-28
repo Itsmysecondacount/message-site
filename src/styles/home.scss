@@ -1,3 +1,21 @@
+@mixin mobile {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+
 .home {
 	background-color: #a7bcff;
 	height: 100vh;
@@ -28,6 +46,9 @@
 
 				.logo {
 					font-weight: bold;
+					@include tablet {
+						display: none;
+					}
 				}
 
 				.user {
@@ -127,6 +148,124 @@
 		}
 		.chat {
 			flex: 2;
+			.chatInfo {
+				height: 50px;
+				background-color: #5d5b8d;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 10px;
+				color: lightgray;
+				letter-spacing: 0.05em;
+			}
+
+			.chatIcons {
+				display: flex;
+				gap: 10px;
+
+				.iconR {
+					font-size: 24px;
+					cursor: pointer;
+				}
+			}
+
+			.messages {
+				background-color: #ddddf7;
+				padding: 10px;
+				height: calc(100% - 160px);
+			}
+			.input {
+				height: 50px;
+				background-color: white;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				input {
+					font-size: 1.1em;
+					padding-left: 20px;
+					width: 70%;
+					height: 40px;
+					border: none;
+					outline: none;
+					box-shadow: 1px 1px #fbfbff;
+					border-radius: 5px;
+
+					&::placeholder {
+						color: rgb(182, 182, 182);
+					}
+				}
+				.send {
+					min-width: 30%;
+					display: flex;
+					align-items: center;
+					.iconsInput {
+						width: 30%;
+						font-size: 1.4em;
+						color: rgb(124, 124, 124);
+					}
+					button {
+						height: 40px;
+						width: 40%;
+						background-color: #7695fc;
+						border: none;
+						color: white;
+						cursor: pointer;
+					}
+				}
+			}
+			.messages {
+				overflow-y: scroll;
+				.message {
+					display: flex;
+					gap: 20px;
+
+					.messageInfo {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						color: #808080;
+						font-weight: 300;
+						font-size: 0.6rem;
+						img {
+							width: 40px;
+							height: 40px;
+							border-radius: 50%;
+							object-fit: cover;
+						}
+					}
+					.messageContent {
+						display: flex;
+						flex-direction: column;
+						gap: 10px;
+
+						p {
+							margin-top: 10px;
+							max-width: max-content;
+							background-color: white;
+							padding: 10px 20px;
+							border-radius: 0px 10px 10px 10px;
+						}
+
+						img {
+							width: 50%;
+						}
+					}
+
+					&.owner {
+						flex-direction: row-reverse;
+						.messageContent {
+							align-items: flex-end;
+							p {
+								background-color: #7695fc;
+								border-radius: 10px 0px 10px 10px;
+								max-width: max-content;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

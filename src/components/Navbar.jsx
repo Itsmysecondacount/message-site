@@ -1,6 +1,9 @@
 import React from 'react';
+import { UserAuth } from '../context/AuthContext';
 
 const Navbar = () => {
+	const { logOut } = UserAuth();
+
 	return (
 		<div className="navbar">
 			<span className="logo">Lama chat</span>
@@ -10,7 +13,7 @@ const Navbar = () => {
 					alt="example"
 				/>
 				<span>Jhon</span>
-				<button>Logout</button>
+				<button onClick={() => logOut()}>Logout</button>
 			</div>
 		</div>
 	);
