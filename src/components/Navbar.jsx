@@ -1,22 +1,19 @@
-import React from 'react';
-import { UserAuth } from '../context/AuthContext';
+import React from "react";
+import { UserAuth } from "../context/AuthContext";
 
 const Navbar = () => {
-	const { logOut } = UserAuth();
+  const { logOut, currentUser } = UserAuth();
 
-	return (
-		<div className="navbar">
-			<span className="logo">Lama chat</span>
-			<div className="user">
-				<img
-					src="https://images.pexels.com/photos/15577045/pexels-photo-15577045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-					alt="example"
-				/>
-				<span>Jhon</span>
-				<button onClick={() => logOut()}>Logout</button>
-			</div>
-		</div>
-	);
+  return (
+    <div className="navbar">
+      <span className="logo">Lama chat</span>
+      <div className="user">
+        <img src={currentUser.photoURL} alt="example" />
+        <span>{currentUser.displayName}</span>
+        <button onClick={() => logOut()}>Logout</button>
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;
